@@ -1,0 +1,23 @@
+<template name="Navigation">
+  <div class="nav-wrapper blue darken-4">
+    <a href="/" class="brand-logo lite-program-logo">CAS-LITE Program</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse navigation-button"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      {{#each navigation}}
+      <li><a href="{{path}}">{{text}}</a></li>
+      {{/each}}
+      {{#if isAdmin}}
+      <li><a href="/admin">Admin</a></li>
+      {{/if}}
+      <li>{{> loginButtons align="right" }}</li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      {{#each navigation}}
+      <li><a href="{{path}}">{{text}}</a></li>
+      {{/each}}
+      {{#if isAdmin}}
+      <li><a href="/admin">Admin</a></li>
+      {{/if}}
+    </ul>
+  </div>
+</template>

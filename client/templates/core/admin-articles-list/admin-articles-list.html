@@ -1,0 +1,11 @@
+<template name="AdminArticlesList">
+  <div class="row">
+    {{> AdminNavigation }}
+    <div class="col s12 m9 admin-panel collection">
+      <a href="#!" class="collection-item" id="add-article">Add New Article</a>
+      {{#each article}} 
+        <a href="/admin/articles/{{_id}}" class="collection-item">{{title}}<span class="secondary-content">{{createdAt}}</span></a>
+      {{/each}}
+    </div>
+  </div>
+</template>
